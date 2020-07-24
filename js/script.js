@@ -3,7 +3,7 @@ const frequencyRange = document.querySelector('#frequency');
 
 window.addEventListener('load', function(){
   frequencyRange.addEventListener('input', onChangeRange);
-  
+  showRadio();
 });
 
 
@@ -36,7 +36,10 @@ const showRadio = (frequency) => {
     divRadio.appendChild(title);
     divRadio.appendChild(image);
     divRadio.appendChild(description);
+    return;
   }
-  const notFound = document.createElement("p");
+  const notFound = document.createElement("h1");
+  notFound.textContent = `Rádio não encontrada`;
+  divRadio.appendChild(notFound);
 }
 
